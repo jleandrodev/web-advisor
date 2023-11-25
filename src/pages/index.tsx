@@ -1,10 +1,30 @@
 import PageTitle from "@components/data-display/PageTitle";
-import { PageTitleContainer } from "@components/data-display/PageTitle/styled";
+import { TextField, Icon, Button } from "@mui/material";
+import { BoxButton, HomeContainer } from "@styles/pages/index.styles";
 
 export default function Home() {
   return (
-    <PageTitleContainer>
-      <PageTitle title="Teste Dahora" subtitle="Hello my friend" />
-    </PageTitleContainer>
+    <HomeContainer>
+      <form>
+        <PageTitle
+          title="Lista de Casamentos"
+          subtitle="Selecione ou pesquise um casamento"
+        />
+        <TextField
+          sx={{ mt: 3, mb: 1 }}
+          label={"Pesquisar Casamento"}
+          InputProps={{
+            startAdornment: <Icon>search</Icon>,
+          }}
+          fullWidth
+          required
+        />
+        <BoxButton>
+          <Button type="submit" variant="contained">
+            Buscar Casamento
+          </Button>
+        </BoxButton>
+      </form>
+    </HomeContainer>
   );
 }
